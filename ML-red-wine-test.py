@@ -1,5 +1,7 @@
 # Открываем файл с вектором характеристик вина (11 характеристик), получаем ответ на вопрос "Является ли вино с такими характеристиками хорошим?"
 
+import os.path
+
 import pandas as pd
 
 from sklearn.model_selection import train_test_split
@@ -9,8 +11,8 @@ from sklearn.metrics import accuracy_score
 
 import pickle
 
-fname = input('Введите имя файла: ')
-if (len(fname) < 1): fname = 'wine-test.csv'
+fname = input('Введите имя файла (по умолчанию - wine-test.csv): ')
+if (len(fname) < 1) or not os.path.exists(fname): fname = 'wine-test.csv'
 
 columns = ['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides', 'free sulfur dioxide', 'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol']
 data = pd.read_csv(fname, names=columns)
