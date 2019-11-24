@@ -9,3 +9,8 @@
 В ML-red-wine.py построенная и обученная модель сохраняется в файл final_model.sav.
 
 Файл ML-red-wine-app.py загружает обученную модель и ожидает POST запросов с данными для прогнозирования. Пример такого запроса представлен в файле ML-red-wine-request.py. Ответом на запрос будет, в зависимости от характеристик вина, либо "This wine is bad", либо "This wine is good".
+
+Установка необходимых зависимостей:
+  pip install flask
+  pip install pandas
+  pip install requests
